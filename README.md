@@ -1,2 +1,5 @@
-# Sticky-notepad
- A sticky notepad i built whiles learning React Js
+# Movie-Finder
+
+# Not Done Alot to be Done
+
+A Movie Finding App i built whiles learning React Js
