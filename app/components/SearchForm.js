@@ -28,7 +28,7 @@ function SearchForm(props) {
           <div className="card-body">
             <h5 className="card-title">Search For Movies</h5>
             <input className="card-text form-control text-center bg-light" type="text"  onChange={e=> setInput(e.target.value)} autoFocus placeholder="Search Movies" />
-            <br /> <button className="btn btn-primary">Search Movie</button>
+            <br /> <button className="btn btn-info">Search Movie</button>
           </div>
         </div>
       </form>

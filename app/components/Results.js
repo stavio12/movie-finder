@@ -10,9 +10,9 @@ function Results(props) {
 {
  props.handleData.map(movie =>(
    <ResultCard key={movie.imdbID} movie={movie} />
-
 ))
-}    
+}   
+
     </>
   )
 }

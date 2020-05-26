@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from "react";
+import MovieInfos from "./MovieInfos";
+import Axios from "axios";
+import LoadingIcon from './LoadingIcon'
 
 function MovieInfo(props) {
-  const infos = props.infos
+  const [details, setDetails] = useState([props.title]);
+  const [data, setData] = useState([]);
+  const[loading,setLoading] = useState(true)
 
-console.log(infos)
+  var title;
+
+  details.map((movie) => {
+    title = movie;
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await Axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=439203c9&t=${title}`);
+      setData([response.data]);
+      setLoading(false)
+    };
+
+    fetchData();
+  }, [title]);
+
+
+
+  if(loading) return(<LoadingIcon/>)
 
   return (
     <>
-{/* {
-  data.map(i=>{
-  console.log("Hello " + i)
-})
-} */}
-  <div className="col-12 col-md-6">
-    <div className="card mb-3 text-white text-center bg-info movieinfo">
-      <div className="card-body">
-<p className="card-text">Hello{infos}</p>
-        <h5 className="card-text"><small>Released</small></h5> 
-        <h5 className="card-text"><small>imdbRating</small></h5> 
-        <p className="card-text">Actors</p>
-      </div>
-    </div>
-  </div>
-
+      {
+      data.map( movie => (
+         <MovieInfos movie={movie} />   
+        ))
+      }
     </>
   );
 }
