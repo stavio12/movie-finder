@@ -1,6 +1,6 @@
 # Movie-Finder
 
-#Live Demo: [Movie Finder](https://admiring-jepsen-d25111.netlify.app/)
+## Live Demo: [Movie Finder](https://movie-finder-gaz.netlify.app/)
 
 A Movie Finding App i built whiles learning React Js
 
