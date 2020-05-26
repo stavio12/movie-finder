@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import MovieInfos from "./MovieInfos";
 import Axios from "axios";
-import LoadingIcon from './LoadingIcon'
+import LoadingIcon from "./LoadingIcon";
 
 function MovieInfo(props) {
   const [details, setDetails] = useState([props.title]);
   const [data, setData] = useState([]);
-  const[loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   var title;
 
@@ -18,23 +18,19 @@ function MovieInfo(props) {
     const fetchData = async () => {
       const response = await Axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=439203c9&t=${title}`);
       setData([response.data]);
-      setLoading(false)
+      setLoading(false);
     };
 
     fetchData();
   }, [title]);
 
-
-
-  if(loading) return(<LoadingIcon/>)
+  if (loading) return <LoadingIcon />;
 
   return (
     <>
-      {
-      data.map( movie => (
-         <MovieInfos movie={movie} />   
-        ))
-      }
+      {data.map((movie) => (
+        <MovieInfos movie={movie} />
+      ))}
     </>
   );
 }

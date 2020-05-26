@@ -18,7 +18,7 @@ function App(props) {
       if (response.data.Response == "False") {
         setNoMovie(true);
         setSearchData([]);
-        setTitle('');
+        setTitle("");
       } else {
         setNoMovie(false);
         setSearchData(response.data.Search);

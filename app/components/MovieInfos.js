@@ -4,7 +4,6 @@ import React, { useEffect } from "react"
 function MovieInfos(props) {
 const title = props.movie
 
-console.log(title)
 
 
  return (
