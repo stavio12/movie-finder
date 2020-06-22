@@ -16,7 +16,7 @@ function MovieInfo(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await Axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=439203c9&t=${title}`);
+      const response = await Axios.get(`YOUR KEY=${title}`);
       setData([response.data]);
       setLoading(false);
     };
