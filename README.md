@@ -1,6 +1,8 @@
 # Movie-Finder
 
 ## Live Demo: [Movie Finder](https://movie-finder-gaz.netlify.app/)
+https://user-images.githubusercontent.com/49410124/85254104-0c4cd780-b44f-11ea-9338-c821056ebf7a.png
+
 
 A Movie Finding App i built whiles learning React Js
 
