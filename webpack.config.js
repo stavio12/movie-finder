@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./app/Main.js",
@@ -12,7 +13,7 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     port: 3000,
-    contentBase: "./build",
+    contentBase: path.resolve(__dirname, "build"),
     hot: true,
     historyApiFallback: { index: "index.html" },
   },
@@ -33,6 +34,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve("./app/index.html"),
+    }),
+    new Dotenv({
+      path: path.resolve(__dirname, "./.env"),
     }),
   ],
 };
