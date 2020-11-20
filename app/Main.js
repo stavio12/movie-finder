@@ -14,7 +14,7 @@ function App(props) {
     setTitle(data);
 
     try {
-      const response = await Axios.get(`YOUR KEY=${data}`);
+      const response = await Axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=${process.env.UrApi}&s=${data}`);
       if (response.data.Response == "False") {
         setNoMovie(true);
         setSearchData([]);
